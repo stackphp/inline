@@ -31,7 +31,6 @@ class StackSilexTest extends \PHPUnit_Framework_TestCase
             $request->attributes->set('callable_middleware', 'success');
 
             $response = $app->handle($request, $type, $catch);
-
             $response->setContent('['.$response->getContent().']');
 
             return $response;
@@ -43,6 +42,7 @@ class StackSilexTest extends \PHPUnit_Framework_TestCase
         $app = $stack->resolve($app);
 
         $response = $app->handle(Request::create('/'));
+
         $this->assertEquals('[SUCCESS]', $response->getContent());
     }
 }

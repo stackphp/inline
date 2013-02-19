@@ -24,13 +24,13 @@ class InlineTest extends \PHPUnit_Framework_TestCase
             $request->attributes->set('callable_middleware', 'success');
 
             $response = $app->handle($request, $type, $catch);
-
             $response->setContent('['.$response->getContent().']');
 
             return $response;
         });
 
         $response = $app->handle(Request::create('/'));
+
         $this->assertEquals('[SUCCESS]', $response->getContent());
     }
 }

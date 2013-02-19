@@ -33,7 +33,6 @@ as a stack middleware for a silex application:
         $request->attributes->set('callable_middleware', 'success');
 
         $response = $app->handle($request, $type, $catch);
-
         $response->setContent('['.$response->getContent().']');
 
         return $response;
