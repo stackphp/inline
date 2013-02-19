@@ -31,7 +31,6 @@ class InlineTest extends \PHPUnit_Framework_TestCase
         });
 
         $response = $app->handle(Request::create('/'));
-
         $this->assertEquals('[SUCCESS]', $response->getContent());
     }
 }

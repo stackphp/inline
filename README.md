@@ -26,7 +26,9 @@ as a stack middleware for a silex application:
 
     $inlineMiddleware = function(
         HttpKernelInterface $app,
-        Request $request,$type = HttpKernelInterface::MASTER_REQUEST, $catch = true
+        Request $request,
+        $type = HttpKernelInterface::MASTER_REQUEST,
+        $catch = true
     ) {
         $request->attributes->set('callable_middleware', 'success');
 
@@ -51,7 +53,9 @@ A simple passthru inline middleware would look like this:
 
     $app = new Stack\Inline($app, function(
         HttpKernelInterface $app,
-        Request $request,$type = HttpKernelInterface::MASTER_REQUEST, $catch = true
+        Request $request,
+        $type = HttpKernelInterface::MASTER_REQUEST,
+        $catch = true
     ) {
         return $app->handle($request, $type, $catch);
     });

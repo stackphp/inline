@@ -24,7 +24,9 @@ class StackSilexTest extends \PHPUnit_Framework_TestCase
 
         $inlineMiddleware = function(
             HttpKernelInterface $app,
-            Request $request,$type = HttpKernelInterface::MASTER_REQUEST, $catch = true
+            Request $request,
+            $type = HttpKernelInterface::MASTER_REQUEST,
+            $catch = true
         ) {
             $request->attributes->set('callable_middleware', 'success');
 
@@ -41,7 +43,6 @@ class StackSilexTest extends \PHPUnit_Framework_TestCase
         $app = $stack->resolve($app);
 
         $response = $app->handle(Request::create('/'));
-
         $this->assertEquals('[SUCCESS]', $response->getContent());
     }
 }
