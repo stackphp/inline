@@ -2,11 +2,10 @@
 
 namespace Stack;
 
-use Closure;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-class CallableMiddleware implements HttpKernelInterface
+class Inline implements HttpKernelInterface
 {
     private $app;
     private $callable;
