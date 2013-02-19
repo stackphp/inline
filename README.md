@@ -1,8 +1,9 @@
-# Stack/Session
+# Stack/Inline
 
 Inline stack middleware.
 
 Enables the usage of callables as stack middlewares.
+
 
 ## Example
 
@@ -40,6 +41,7 @@ as a stack middleware for a silex application:
         ->push('Stack\Inline', $inlineMiddleware);
 
     $app = $stack->resolve($app);
+
 
 ## Usage
 

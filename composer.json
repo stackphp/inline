@@ -1,16 +1,12 @@
 {
-    "name": "stack/callable",
-    "description": "Session stack middleware.",
-    "keywords": ["stack", "session"],
+    "name": "stack/inline",
+    "description": "Inline stack middleware.",
+    "keywords": ["stack", "inline", "callable"],
     "license": "MIT",
     "authors": [
         {
             "name": "Igor Wiedler",
             "email": "igor@wiedler.ch"
-        },
-        {
-            "name": "Beau Simensen",
-            "email": "beau@dflydev.com"
         }
     ],
     "require": {
@@ -21,8 +17,7 @@
     "require-dev": {
         "silex/silex": "~1.0@dev",
         "stack/stack": "~1.0@dev",
-        "stack/callable-http-kernel": "~1.0@dev",
-        "symfony/browser-kit": "~2.1"
+        "stack/callable-http-kernel": "~1.0@dev"
     },
     "autoload": {
         "psr-0": { "Stack": "src" }

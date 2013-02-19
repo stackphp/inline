@@ -6,7 +6,6 @@ use Stack\CallableHttpKernel;
 use Stack\Inline;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Client;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class InlineTest extends \PHPUnit_Framework_TestCase
@@ -31,10 +30,8 @@ class InlineTest extends \PHPUnit_Framework_TestCase
             return $response;
         });
 
-        $client = new Client($app);
+        $response = $app->handle(Request::create('/'));
 
-        $client->request('GET', '/');
-
-        $this->assertEquals('[SUCCESS]', $client->getResponse()->getContent());
+        $this->assertEquals('[SUCCESS]', $response->getContent());
     }
 }
