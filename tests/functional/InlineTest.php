@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class InlineTest extends \PHPUnit_Framework_TestCase
 {
-    public function testSomething()
+    public function testWrappingApp()
     {
         $app = new CallableHttpKernel(function(Request $request) {
             if ('success' === $request->attributes->get('callable_middleware')) {
