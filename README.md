@@ -16,7 +16,7 @@ as a stack middleware for a silex application:
 
     $app = new Silex\Application();
 
-    $app->get('/', function(Request $request) {
+    $app->get('/', function (Request $request) {
         if ('success' === $request->attributes->get('callable_middleware')) {
             return new Response('SUCCESS');
         }
