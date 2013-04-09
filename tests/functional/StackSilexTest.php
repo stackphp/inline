@@ -3,7 +3,7 @@
 namespace functional;
 
 use Silex\Application;
-use Stack\Stack;
+use Stack\Builder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -36,7 +36,7 @@ class StackSilexTest extends \PHPUnit_Framework_TestCase
             return $response;
         };
 
-        $stack = (new Stack())
+        $stack = (new Builder())
             ->push('Stack\Inline', $inlineMiddleware);
 
         $app = $stack->resolve($app);

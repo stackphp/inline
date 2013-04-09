@@ -16,7 +16,7 @@
     },
     "require-dev": {
         "silex/silex": "~1.0@dev",
-        "stack/stack": "~1.0@dev",
+        "stack/builder": "~1.0@dev",
         "stack/callable-http-kernel": "~1.0@dev"
     },
     "autoload": {

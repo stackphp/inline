@@ -38,7 +38,7 @@ as a stack middleware for a silex application:
         return $response;
     };
 
-    $stack = (new Stack\Stack())
+    $stack = (new Stack\Builder())
         ->push('Stack\Inline', $inlineMiddleware);
 
     $app = $stack->resolve($app);
